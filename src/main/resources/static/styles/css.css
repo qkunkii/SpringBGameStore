@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
 
 ::-webkit-scrollbar {
     display: none;
 }
-
+body{
+    background: #ffffff;
+    padding: 0;
+    margin: 0;
+}
 .content {
     font-family: "Bebas Neue", Dubai, system-ui;
     max-width: 30%;
@@ -122,21 +127,4 @@ input{
     text-indent:3px;
     margin:0;
     border: black dashed 2px;
-}
-
-.footer{
-    background-color: #000000;
-    align-content: center;
-    color: #ffffff;
-    position: relative;
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-    height:100px
-}
-.header{
-    background-color: black;
-    position: sticky;
-    top: 0;
-    z-index: 2;
 }

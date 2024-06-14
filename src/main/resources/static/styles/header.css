@@ -1,0 +1,60 @@
+.header{
+    background-color: #04143e;
+}
+.headercontainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3.75rem;
+}
+.logo {
+    margin-top: 5px;
+    margin-left: 0.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    padding: 0.2rem;
+    background-color: #483D8BFF;
+    border-radius: 20%;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.logo:hover{
+    transform: rotateZ(-10deg) scale(112%) translateY(7px);
+}
+.navlink{
+    font-size: 1.2rem;
+    margin: 0.1rem;
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #6b56ef;
+    padding: 0.6rem 0.8rem ;
+    border-radius: 0.3rem;
+    border: #483D8BFF 2px dashed;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border 0.1ms ease-in-out;
+}
+.navlink:hover{
+    background-color: #CD4F38FF;
+    color: #ffffff;
+    border: #CD4F38FF 2px dashed;
+}
+.loginbutton{
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    border: #483D8BFF 2px dashed;
+    padding: 0.6rem 0.8rem ;
+    border-radius: 0.3rem;
+    color: #6b56ef;
+    margin-right: 0.5rem;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border 0.1ms ease-in-out;
+}
+.loginbutton:hover{
+    background-color: #cd4f38;
+    color: #ffffff;
+    border: #cd4f38 2px dashed;
+}

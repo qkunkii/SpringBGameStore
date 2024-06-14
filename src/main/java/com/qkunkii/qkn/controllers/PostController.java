@@ -26,14 +26,6 @@ public class PostController {
     public PostRepository postRepository;
     public static String UploadDir = System.getProperty("user.dir") + "/src/main/resources/static/images/";
 
-    @GetMapping("/")
-    public String HomeBlog(Model model) {
-        model.addAttribute("title", "Головна сторінка");
-        model.addAttribute("text", "Home");
-        Iterable<Post> posts = postRepository.findAll();
-        model.addAttribute("posts", posts);
-        return "home";
-    }
     @GetMapping("/posts")
     public String postsMain(Model model) {
         model.addAttribute("title", "Blog");
@@ -71,8 +63,8 @@ public class PostController {
         model.addAttribute("text", "Add post");
         return "addpost";
     }
-    @PostMapping("posts/create")
-    public String AddPostToDb(@RequestParam String name, @RequestParam String short_desc, @RequestParam String full_desc, @RequestParam int downloads, @RequestParam int wishlisted, @RequestParam ("image") MultipartFile file, Model model) throws IOException {
+    @PostMapping("/posts/create")
+    public String AddPostToDb(@RequestParam String name, @RequestParam String short_desc, @RequestParam String full_desc, @RequestParam int downloads, @RequestParam int wishlisted, @RequestParam ("image") MultipartFile file) throws IOException {
         StringBuilder filename = new StringBuilder();
         Path filenameandpath = (Paths.get(UploadDir, file.getOriginalFilename()));
         filename.append(file.getOriginalFilename());
@@ -96,14 +88,13 @@ public class PostController {
         return "postedit";
     }
     @PostMapping ("/post/{id}/edited")
-    public String PostEditConf (@RequestParam String name, @RequestParam String short_desc, @RequestParam String full_desc, @RequestParam int downloads, @RequestParam int wishlisted, @RequestParam ("image") MultipartFile file, @PathVariable(value = "id") Long id, @RequestParam String oldphoto,  Model model) throws IOException {
+    public String PostEditConf (@RequestParam String name, @RequestParam String short_desc, @RequestParam String full_desc, @RequestParam int downloads, @RequestParam int wishlisted, @RequestParam ("image") MultipartFile file, @PathVariable(value = "id") Long id, @RequestParam String oldphoto) throws IOException {
         String image = "";
         File oldp = new File(UploadDir + oldphoto);
         if(Objects.equals(file.getOriginalFilename(), "") ) {
             //file is not selected = noimage
             if (Objects.equals(oldphoto, "noimage.jpg") || Objects.equals(oldphoto, "errordel.jpg") || Objects.equals(oldphoto, "")) {
                 image = "noimage.jpg";
-                Path filenameandpath = (Paths.get(UploadDir, image));
                 Post post = new Post(id, name, short_desc, full_desc, image, wishlisted, downloads);
                 postRepository.deleteById(id);
                 postRepository.save(post);
@@ -142,7 +133,6 @@ public class PostController {
         else {
             image = file.getOriginalFilename();
             Path filenameandpath = (Paths.get(UploadDir, image));
-            //file selected = new image, delete old, dont delete noimage.jpg
             if (!Objects.equals(oldphoto, "noimage.jpg") || !Objects.equals(oldphoto, "errordel.jpg") || !Objects.equals(oldphoto, "")) {
                 image = file.getOriginalFilename();
                 filenameandpath = (Paths.get(UploadDir, image));

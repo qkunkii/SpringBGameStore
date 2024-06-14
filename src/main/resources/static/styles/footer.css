@@ -1,0 +1,100 @@
+.footer{
+    background-color: #04143EFF;
+    padding: 20px;
+}
+.upperfoot {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.buttons{
+    background-color: #483D8BFF;
+    padding: 0.7rem;
+    border-radius: 1.5rem;
+    height: auto;
+    width: 9rem;
+    font-size: 1.2rem;
+    font-family: "Tiny5", sans-serif;
+    color: #CD4F38FF;
+}
+.github{
+    margin-bottom: 5px;
+    text-align: left;
+    background-color: #04143EFF;
+    border-radius: 14px;
+    border: #483D8BFF 2px dashed;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border 0.1ms ease-in-out;
+    svg{
+        fill: #CD4F38FF;
+        transition: fill 0.2s ease-in-out;
+    }
+}
+.github:hover{
+    background-color: #CD4F38FF;
+    color: #ffffff;
+    border: #CD4F38FF 2px dashed;
+    svg{
+        fill: #FFFFFF;
+    }
+}
+.telegram{
+    margin-bottom: 5px;
+    text-align: left;
+    background-color: #04143EFF;
+    border-radius: 14px;
+    border: #483D8BFF 2px dashed;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border 0.1ms ease-in-out;
+    svg{
+        fill: #CD4F38FF;
+        transition: fill 0.2s ease-in-out;
+    }
+}
+.telegram:hover{
+    background-color: #CD4F38FF;
+    color: #ffffff;
+    border: #CD4F38FF 2px dashed;
+    svg{
+        fill: #FFFFFF;
+    }
+}
+.instagram{
+    text-align: left;
+    background-color: #04143EFF;
+    border-radius: 14px;
+    border: #483D8BFF 2px dashed;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border 0.1ms ease-in-out;
+    svg{
+        fill: #CD4F38FF;
+        transition: fill 0.2s ease-in-out;
+    }
+}
+.instagram:hover{
+    background-color: #CD4F38FF;
+    color: #ffffff;
+    border: #CD4F38FF 2px dashed;
+    svg{
+        fill: #FFFFFF;
+    }
+}
+.linksimages {
+    margin: 0.2rem;
+}
+.imageblock{
+    margin: 0;
+    background-color: #483D8BFF;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    transition: all 0.2s ease-in-out;
+}
+.imageblock:hover{
+    transform: rotateZ(-10deg) scale(112%) translateY(7px);
+}
+.footerlogo{
+    height: 8rem;
+    width: 8rem;
+}
+.copyright {
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: "Tiny5", sans-serif;
+}

@@ -1,0 +1,4 @@
+Orange:         #CD4F38FF
+Light Blue:     #483D8BFF
+Dark Blue:      #04143EFF
+White:          #C4BCB5
